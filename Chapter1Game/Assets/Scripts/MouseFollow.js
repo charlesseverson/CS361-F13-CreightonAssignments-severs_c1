@@ -10,7 +10,7 @@ function Update ()
 	
 	var tiltAroundZ = Input.GetAxis("Mouse X") * tiltAngle * 2;
     var tiltAroundX = Input.GetAxis("Mouse Y") * tiltAngle * -2;
-    var target = Quaternion.Euler (tiltAroundX, 0, tiltAroundZ);
+    var target = Quaternion.Euler (tiltAroundX, 180, tiltAroundZ);
     // Dampen towards the target rotation
     transform.rotation = Quaternion.Slerp(transform.rotation, target,
     	Time.deltaTime * smooth);
